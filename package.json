@@ -1,0 +1,22 @@
+{
+  "name": "live-reload-mithril-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexey Grishin",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-changed": "^1.2.1",
+    "gulp-coffee": "^2.3.1",
+    "gulp-live-server": "0.0.14",
+    "gulp-livereload-mithril": "^0.2.0",
+    "gulp-util": "^3.0.5"
+  },
+  "dependencies": {
+    "node-static": "^0.7.6"
+  }
+}
