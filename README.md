@@ -17,9 +17,10 @@ gulp serve
 
 ## How it works
 
-It requires cooperation of 2 plugins:
-1. `gulp-livereload-mitril` - it processes the js code and moves out mithril `view` functions to separate file called `st8less.js` by default.
-   This class also contains plugin for LiveReload which handles updates of itself and updates functions without whole page reload.
+It requires cooperation of 2 plugins
+
+1. `gulp-livereload-mitril` - it processes the js code and moves out mithril `view` functions to separate file called `st8less.js` by default. This class also contains plugin for LiveReload which handles updates of itself and updates functions without whole page reload.
+
 2. `gulp-changed` - it allows to notify LiveReload about only really changed js files (by contents comparison). Without it you'll get page still reloaded as changed time of your js files will be changed due to your edits.
 
 In this example I use `gulp-live-server` module to run both app server and LiveReload server and notify it. I do not think it will be a problem to use another live reload client.
