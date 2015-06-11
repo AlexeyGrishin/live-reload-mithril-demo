@@ -1,14 +1,4 @@
-
-wrapItem = (item) ->
-  "__stateless"
-  m "i", ["[", item, "]"]
-
-List =
-  view: (c, items) ->
-    m "ul", [
-      items.map (i) -> m "li", wrapItem(i)
-    ]
-
+List = require('./list')
 
 MainPage =
   controller: ->
@@ -20,12 +10,13 @@ MainPage =
       m.redraw()
     ), 1000
 
+
   view: (c) ->
     m "div", [
       m "h3",
         {class: if c.reloaded then 'red' else 'gray'},
         "Page reloaded!"
-      m "div.big", "Hello world"
+      m "div.small", "Hello world"
       m "button.small",
         {onclick: (-> c.opened = not c.opened)},
         if c.opened then "Close" else "Open"
