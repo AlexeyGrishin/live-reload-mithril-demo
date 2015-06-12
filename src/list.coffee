@@ -5,7 +5,7 @@ wrapItem = (item) ->
 
 module.exports = List =
   view: (c, items) ->
-    m "ol", [
+    m "ul", [
       items.map (i) -> m "li", wrapItem(i)
     ]
 
