@@ -65,3 +65,29 @@ gulp.task('serve', ['compile'], function () {
     gulp.watch(SRC, ['compile']);
 });
 ```
+
+## Integration with browserify
+
+Take a look at `browserify` branch. You may run it with the following commands:
+```javascript
+git clone https://github.com/AlexeyGrishin/live-reload-demo
+git checkout browserify
+npm install
+gulp serve
+```
+
+You may note that first compilation takes ~5s - this is due to `src/something_big.coffee` included to the sources. If we run browserify on every change then we have to wait that time before browser page is updated.
+
+To solve that it is recommended to use:
+1. `browserify-incremental`
+2. browserify adapter for `gulp-mithril-livereload` plugin (already inside)
+
+Check `gulpfile.js` to see how they are used together. Then to check how it works:
+
+- Open http://localhost:3000
+- Open `src/list.coffee` in your favourite editor, change `view` function and save changes
+  - you'll see changes immediately
+- Open `src/main.coffee` and change `view` function
+  - you'll see changes immediately
+- Open `src/something_big.coffee` and change `Page1` `view` function
+  - you'll see changes after ~5s delay
